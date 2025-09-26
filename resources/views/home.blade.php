@@ -135,7 +135,52 @@
                                         <!-- Modal -->
 
                                         @if ($candidat->note)
-                                            {{ $candidat->note }}
+                                            {{ $candidat->note }} / 10
+                                            <button  data-toggle='modal' data-target='#exampleModalform3{{ $candidat->id }}' role='button' class='btn btn-warning' title='Note /  Grade / Nota'><i class='fas fa-edit'></i></button>
+                                            <div class="modal fade" id="exampleModalform3{{$candidat->id}}" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">{{ $candidat->nom}}</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <form action="{{ route('note.store') }}" method="POST">
+                                                        @csrf
+                                                    <div class="modal-body">
+
+                                                        <input type="hidden" name="candidat_id" value="{{$candidat->id}}">
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group no-margin">
+                                                                    <label for="field-7" class="control-label">Note /  Grade / Nota</label>
+                                                                    <select class="form-control" name="note" required="">
+                                                                    <option value="" >Veuillez sélectionner une note / Please select a grade / Por favor, selecione uma nota</option>
+                                                                    <option value="1" {{ $candidat->note==1 ? 'selected' : '' }}>1</option>
+                                                                    <option value="2" {{ $candidat->note==2 ? 'selected' : '' }}>2</option>
+                                                                    <option value="3" {{ $candidat->note==3 ? 'selected' : '' }}>3</option>
+                                                                    <option value="4" {{ $candidat->note==4 ? 'selected' : '' }}>4</option>
+                                                                    <option value="5" {{ $candidat->note==5 ? 'selected' : '' }}>5</option>
+                                                                    <option value="6" {{ $candidat->note==6 ? 'selected' : '' }}>6</option>
+                                                                    <option value="7" {{ $candidat->note==7 ? 'selected' : '' }}>7</option>
+                                                                    <option value="8" {{ $candidat->note==8 ? 'selected' : '' }}>8</option>
+                                                                    <option value="9" {{ $candidat->note==9 ? 'selected' : '' }}>9</option>
+                                                                    <option value="10" {{ $candidat->note==10 ? 'selected' : '' }}>10</option>
+                                                                </select>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer / Cancel / fechar</button>
+                                                        <button type="submint" class="btn btn-primary">ENREGISTRER / SUBMIT / REGISTRAR</button>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         @else
                                         <button  data-toggle='modal' data-target='#exampleModalform3{{ $candidat->id }}' role='button' class='btn btn-warning' title='Note /  Grade / Nota'><i class='fas fa-edit'></i></button>

@@ -4,12 +4,12 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>MI 20205</title>
+        <title>Pell 20205</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{ asset('photo/pell.png') }}">
 
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
@@ -43,7 +43,7 @@
             <div class="card-body">
 
                 <div class="text-center">
-                      <a href="index.html" class="logo logo-admin"><img src="{{ asset('images/logo.png') }} " height="150" alt="logo"></a>
+                      <a href="index.html" class="logo logo-admin"><img src="{{ asset('photo/pell.png') }} " height="150" alt="logo"></a>
                 </div>
 
                 <div class="px-3 pb-3">
@@ -98,7 +98,7 @@
 
 
                             </div>
-                            <div class="form-group text-center mt-4 pt-2">
+                           {{--  <div class="form-group text-center mt-4 pt-2">
                                 <div class="col-sm-12">
                                     @if (Route::has('password.request'))
                                         <a class="text-muted" href="{{ route('password.request') }}">
@@ -106,7 +106,7 @@
                                         </a>
                                     @endif
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </form>
                 </div>

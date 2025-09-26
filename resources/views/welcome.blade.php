@@ -9,7 +9,7 @@
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('photo/pell.png') }}">
 
         <link rel="stylesheet" href="{{ asset('assets/plugins/morris/morris.css') }} ">
 
@@ -65,7 +65,7 @@
                             <li>
                                 <a href="{{ route('home') }}" class="waves-effect">
                                     <i class="mdi mdi-airplay"></i>
-                                    <span> Dashboard <span class="badge badge-pill badge-primary float-right">7</span></span>
+                                    <span> Dashboard <span class="badge badge-pill badge-primary float-right"></span></span>
                                 </a>
                             </li>
                             @if (auth()->user()->role=="admin")

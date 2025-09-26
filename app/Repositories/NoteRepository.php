@@ -20,6 +20,16 @@ class NoteRepository extends RessourceRepository{
         ->first();
 
     }
+    public function updateNote($candidat_id,$user_id,$note)
+    {
+        return DB::table("notes")
+
+        ->where("candidat_id",$candidat_id)
+        ->where("user_id",$user_id)
+        ->update(["note" => $note]);
+
+
+    }
 
     public function getByCorrecteur($user_id)
     {

@@ -56,12 +56,14 @@ class NoteController extends Controller
 
         $verifNote = $this->noteRepository->verifNote($request['candidat_id'],$request['user_id']);
         if($verifNote){
-            return redirect()->back()->with("error", "Vous avez déjà noté ce candidat");
+            //return redirect()->back()->with("error", "Vous avez déjà noté ce candidat");
+            $this->noteRepository->updateNote($request['candidat_id'],$request['user_id'],$request['note']);
+             return redirect()->back()->with("success","Succès");
         }
 
         $note = $this->noteRepository->store($request->all());
        // dd($note->id);
-        return redirect()->back()->with("success","Suucès");
+        return redirect()->back()->with("success","Succès");
 
     }
 
