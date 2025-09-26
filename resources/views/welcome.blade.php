@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Zoter - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>PELL 2025</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -50,8 +50,8 @@
                 <div class="topbar-left">
                     <div class="text-center">
                         <!--<a href="index.html" class="logo"><i class="mdi mdi-assistant"></i> Zoter</a>-->
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo-lg.png" alt="" class="logo-large">
+                        <a href="{{ route('home') }}" class="logo">
+                            <img src="{{ asset('photo/pell.png') }}" alt=""  height="50">
                         </a>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
                                         <div class="dropdown-item noti-title">
-                                            <h5>Binvenue</h5>
+                                            <h5>Bienvenue</h5>
                                         </div>
                                       {{--   <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
                                         <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i> My Wallet</a>
