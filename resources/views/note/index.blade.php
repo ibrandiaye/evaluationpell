@@ -53,7 +53,7 @@
                             <th>#</th>
                             <th>Categorie</th>
                             <th>Candidat</th>
-
+                            <th>Note</th>
 
                             <th>Date </th>
 
@@ -65,8 +65,10 @@
                     @foreach ($notes as $note)
                         <tr>
                             <td>{{ $note->id }}</td>
-                            <td>  {{ $note->candidat }} </td>
                             <td>{{ $note->categorie}}</td>
+                            <td>  {{ $note->candidat }} </td>
+
+                            <td>{{ $note->name}} : {{ $note->note}}</td>
 
                              <td>{{ $note->created_at}}</td>
                         </tr>
