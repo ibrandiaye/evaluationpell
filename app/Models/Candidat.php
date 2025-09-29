@@ -15,6 +15,10 @@ class Candidat extends Model
     {
         return $this->belongsTo(Categorie::class);
     }
+     public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
 
     /* public function getTotolAttribute()
     {

@@ -53,9 +53,12 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                             <th>Categorie</th>
                             <th>NOM </th>
 
-                            <th>Categorie</th>
+
+
+                            <th>Note</th>
 
                             <th>Actions</th>
                         </tr>
@@ -64,8 +67,16 @@
                     @foreach ($candidats as $candidat)
                         <tr>
                             <td>{{ $candidat->id }}</td>
+                             <td>{{ $candidat->categorie->nom}}</td>
                             <td>{{ $candidat->nom}}</td>
-                              <td>{{ $candidat->categorie->nom}}</td>
+                            <td>
+                                 @foreach ($candidat->notes as $note )
+                                    {{ $note->user->name }} : {{ $note->note }}/10<br>
+                                @endforeach
+                            </td>
+
+
+
                             <td>
 
                                 <a href="{{ route('candidat.edit', $candidat->id) }}" role="button" class="btn btn-warning"><i class="fas fa-edit"></i></a>

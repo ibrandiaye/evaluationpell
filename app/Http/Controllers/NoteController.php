@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class NoteController extends Controller
 {
     protected $noteRepository;
-
+    protected $candidatRepository;
     public function __construct(NoteRepository $noteRepository)
     {
+        $this->middleware('auth');
         $this->noteRepository = $noteRepository;
     }
     /**

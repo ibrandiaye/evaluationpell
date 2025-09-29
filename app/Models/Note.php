@@ -16,6 +16,10 @@ class Note extends Model
     {
         return $this->belongsTo(Candidat::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 
 }

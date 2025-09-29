@@ -21,7 +21,7 @@ class HomeController extends Controller
     public function __construct(CandidatRepository $candidatRepository,CategorieRepository $categorieRepository,
                                 NoteRepository $noteRepository)
     {
-        $this->middleware('auth')->except(['allCandidat','noter',"candidatByCategorie"]);
+        $this->middleware('auth');
         $this->candidatRepository = $candidatRepository;
         $this->categorieRepository = $categorieRepository;
         $this->noteRepository  = $noteRepository;

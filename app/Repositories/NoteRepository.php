@@ -48,7 +48,8 @@ class NoteRepository extends RessourceRepository{
         return DB::table("notes")
         ->join("candidats","notes.candidat_id","=","candidats.id")
         ->join("categories","candidats.categorie_id","=","categories.id")
-        ->select("notes.*","candidats.image","categories.nom as categorie","candidats.nom as candidat")
+         ->join("users","candidats.user_id","=","users.id")
+        ->select("notes.*","categories.nom as categorie","candidats.nom as candidat","users.name")
 
         ->get();
 

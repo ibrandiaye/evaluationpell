@@ -13,6 +13,7 @@ class CandidatController extends Controller
     protected $categorieRepository;
     public function __construct(CandidatRepository $candidatRepository,CategorieRepository $categorieRepository)
     {
+        $this->middleware('auth');
         $this->candidatRepository = $candidatRepository;
         $this->categorieRepository = $categorieRepository;
     }
