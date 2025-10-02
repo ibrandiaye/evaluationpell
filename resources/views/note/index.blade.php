@@ -56,6 +56,7 @@
                             <th>Note</th>
 
                             <th>Date </th>
+                            <th>Action</th>
 
 
 
@@ -71,6 +72,18 @@
                             <td>{{ $note->name}} : {{ $note->note}}</td>
 
                              <td>{{ $note->created_at}}</td>
+                             <td>
+                                 <form method="POST"
+                                    action="{{ route('note.destroy', $note->id) }}"
+                                    style="display:inline;"
+                                    onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet enregistrement ?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                             </td>
                         </tr>
                         @endforeach
 
